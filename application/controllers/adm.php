@@ -18,7 +18,14 @@ class Adm extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function dashbord()
+	public function dashboard()
+	{
+		$this->load->view('template/header');
+		$this->load->view('template/side-bar');
+		$this->load->view('adm/adm-dashboard');
+		$this->load->view('template/footer');
+	}
+	public function dashboard2()
 	{
 		$this->load->view('template/header');
 		$this->load->view('template/side-bar');

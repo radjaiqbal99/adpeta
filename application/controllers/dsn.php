@@ -25,4 +25,71 @@ class Dsn extends CI_Controller {
 		$this->load->view('dsn/dsn-dashboard');
 		$this->load->view('template/footer');
 	}
+
+	public function dosenpembimbing()
+	{
+		$data['tittle'] = 'Dosen Pembimbing';
+		$this->load->view('template/dosen/head', $data);
+		$this->load->view('template/dosen/header');
+		$this->load->view('template/dosen/sidebar');
+		$this->load->view('template/dosen/breadcrumb');
+		$this->load->view('/dsn/dsn_pembimbing');
+		$this->load->view('template/dosen/footer');
+		$this->load->view('template/dosen/js');
+	}
+	public function dosenpenguji()
+	{
+		$data['tittle'] = 'Dosen Penguji';
+		$this->load->view('template/dosen/head', $data);
+		$this->load->view('template/dosen/header');
+		$this->load->view('template/dosen/sidebar');
+		$this->load->view('template/dosen/breadcrumb');
+		$this->load->view('/dsn/dsn_penguji');
+		$this->load->view('template/dosen/footer');
+		$this->load->view('template/dosen/js');
+	}
+	public function kegiatan()
+	{
+		$data['tittle'] = 'Kegiatan KP';
+		$this->load->view('template/dosen/head', $data);
+		$this->load->view('template/dosen/header');
+		$this->load->view('template/dosen/sidebar');
+		$this->load->view('template/dosen/breadcrumb');
+		$this->load->view('/dsn/kegiatan');
+		$this->load->view('template/dosen/footer');
+		$this->load->view('template/dosen/js');
+	}
+	public function jadwalsidang()
+	{
+		$data['tittle'] = 'Jadwal Sidang KP';
+		$this->load->view('template/dosen/head', $data);
+		$this->load->view('template/dosen/header');
+		$this->load->view('template/dosen/sidebar');
+		$this->load->view('template/dosen/breadcrumb');
+		$this->load->view('/dsn/jadwalsidang');
+		$this->load->view('template/dosen/footer');
+		$this->load->view('template/dosen/js');
+	}
+	public function inputnilai()
+	{
+		$data['tittle'] = 'Input Nilai KP';
+		$this->load->view('template/dosen/head', $data);
+		$this->load->view('template/dosen/header');
+		$this->load->view('template/dosen/sidebar');
+		$this->load->view('template/dosen/breadcrumb');
+		$this->load->view('/dsn/inputnilai');
+		$this->load->view('template/dosen/footer');
+		$this->load->view('template/dosen/js');
+	}
+	public function inputnilaipenguji()
+	{
+		$data['tittle'] = 'Input Nilai KP';
+		$this->load->view('template/dosen/head', $data);
+		$this->load->view('template/dosen/header');
+		$this->load->view('template/dosen/sidebar');
+		$this->load->view('template/dosen/breadcrumb');
+		$this->load->view('/dsn/inputnilaipenguji');
+		$this->load->view('template/dosen/footer');
+		$this->load->view('template/dosen/js');
+	}
 }
