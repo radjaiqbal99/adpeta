@@ -2,7 +2,7 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
-     
+
     </div>
     <!-- /.content-header -->
 
@@ -21,7 +21,7 @@
               <div class="icon">
                 <i class="ion ion-ios-book"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="mhs/formulirpengajuanKP" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -40,9 +40,9 @@
             </div>
           </div>
           <!-- ./col -->
-          
+
         </div>
-        <!-- /.row -->   
+        <!-- /.row -->
     </section>
     <!-- /.content -->
   </div>

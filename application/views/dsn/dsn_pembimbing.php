@@ -1,5 +1,5 @@
-      <!-- Main content -->
-      <section class="content">
+<!-- Main content -->
+    <section class="content">
         <div class="container-fluid">
             <div class="shadow mb-4 card-body">
             <table id="example2" class="table  table-hover nowrap">

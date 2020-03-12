@@ -20,10 +20,11 @@ class Mhs extends CI_Controller {
 	 */
 	public function dashbord()
 	{
-		$this->load->view('template/header');
-		$this->load->view('template/side-bar');
-		$this->load->view('mhs/mhs-dashboard');
-		$this->load->view('template/footer');
+		$data['akun']= $this->db->get_where('akun',['username' =>$this->session->userdata('username')])->row_array();
+		$this->load->view('template/header',$data);
+		$this->load->view('template/side-bar',$data);
+		$this->load->view('mhs/mhs-dashboard',$data);
+		$this->load->view('template/footer',$data);
 	}
 
 	public function formulirpengajuanKP()

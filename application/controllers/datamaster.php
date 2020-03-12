@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Datamaster extends CI_Controller {
+class Datamaster extends CI_Controller
+{
 
 	/**
 	 * Index Page for this controller.
@@ -18,75 +19,133 @@ class Datamaster extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function tambahadmin()
+
+	// DASHBOARD ADMIN
+	public function dashboard()
 	{
-		$data['tittle'] = 'Tambah Admin';
-		$this->load->view('template/datamaster/head', $data);
-		$this->load->view('template/datamaster/header');
-		$this->load->view('template/datamaster/sidebar');
-		$this->load->view('/datamaster/t_admin');
-		$this->load->view('template/datamaster/footer');
-		$this->load->view('template/datamaster/js');
+		$value['akun'] = $this->db->get_where('akun', ['username' => $this->session->userdata('username')])->row_array();
+		$value['value_main'] = 0;
+		$value['value_side'] = 0;
+		$value['title']="Dashboard";
+		$value['header']="Dashboard";
+		$this->load->view('template/header', $value);
+		$this->load->view('template/datamaster/side-bar-dmt', $value);
+		$this->load->view('datamaster/dmt-main', $value);
+		$this->load->view('template/footer');
 	}
-	public function tambahkoordinatorkp()
+
+	// SETTINGS ADMIN ACCOUNTS
+	public function setadm()
 	{
-		$data['tittle'] = 'Tambah Koordinator KP';
-		$this->load->view('template/datamaster/head', $data);
-		$this->load->view('template/datamaster/header');
-		$this->load->view('template/datamaster/sidebar');
-		$this->load->view('/datamaster/t_koorkp');
-		$this->load->view('template/datamaster/footer');
-		$this->load->view('template/datamaster/js');
+		$value['akun'] = $this->db->get_where('akun', ['username' => $this->session->userdata('username')])->row_array();
+		$value['title']="Admin";
+		$value['header']="Admin";
+		$value['value_main'] = 1;
+		$value['value_side'] = 1;
+		$this->load->view('template/header', $value);
+		$this->load->view('template/datamaster/side-bar-dmt', $value);
+		$this->load->view('datamaster/dmt-main', $value);
+		$this->load->view('template/footer', $value);
 	}
-	public function tambahkoordinatorta()
+
+	// SETTINGS KP ACCOUNTS
+	public function setkp_kordinator()
 	{
-		$data['tittle'] = 'Tambah Koordinator TA';
-		$this->load->view('template/datamaster/head', $data);
-		$this->load->view('template/datamaster/header');
-		$this->load->view('template/datamaster/sidebar');
-		$this->load->view('/datamaster/t_koorta');
-		$this->load->view('template/datamaster/footer');
-		$this->load->view('template/datamaster/js');
+		$value['akun'] = $this->db->get_where('akun', ['username' => $this->session->userdata('username')])->row_array();
+		$value['title']="Kordinator KP";
+		$value['header']="Kordinator KP";
+		$value['value_main'] = 2;
+		$value['value_side'] = 1;
+		$this->load->view('template/header', $value);
+		$this->load->view('template/datamaster/side-bar-dmt', $value);
+		$this->load->view('datamaster/dmt-main', $value);
+		$this->load->view('template/footer', $value);
 	}
-	public function tambahdosenpembimbing()
+	public function setkp_pembimbing()
 	{
-		$data['tittle'] = 'Tambah Dosen Pembimbing';
-		$this->load->view('template/datamaster/head', $data);
-		$this->load->view('template/datamaster/header');
-		$this->load->view('template/datamaster/sidebar');
-		$this->load->view('/datamaster/t_dosbing');
-		$this->load->view('template/datamaster/footer');
-		$this->load->view('template/datamaster/js');
+		$value['akun'] = $this->db->get_where('akun', ['username' => $this->session->userdata('username')])->row_array();
+		$value['title']="Pembimbing KP";
+		$value['header']="Dosen Pembimbing KP";
+		$value['value_main'] = 2;
+		$value['value_side'] = 2;
+		$this->load->view('template/header', $value);
+		$this->load->view('template/datamaster/side-bar-dmt', $value);
+		$this->load->view('datamaster/dmt-main', $value);
+		$this->load->view('template/footer', $value);
 	}
-	public function tambahdosenpenguji()
+	public function setkp_penguji()
 	{
-	$data['tittle'] = 'Tambah Dosen Penguji';		
-		$this->load->view('template/datamaster/head', $data);
-		$this->load->view('template/datamaster/header');
-		$this->load->view('template/datamaster/sidebar');
-		$this->load->view('/datamaster/t_dosji');
-		$this->load->view('template/datamaster/footer');
-		$this->load->view('template/datamaster/js');
+		$value['akun'] = $this->db->get_where('akun', ['username' => $this->session->userdata('username')])->row_array();
+		$value['title']="Penguji KP";
+		$value['header']="Dosen Penguji KP";
+		$value['value_main'] = 2;
+		$value['value_side'] = 3;
+		$this->load->view('template/header', $value);
+		$this->load->view('template/datamaster/side-bar-dmt', $value);
+		$this->load->view('datamaster/dmt-main', $value);
+		$this->load->view('template/footer', $value);
 	}
-	public function tambahmahasiswa()
+	public function setkp_mahasiswa()
 	{
-		$data['tittle'] = 'Tambah Mahasiswa';
-		$this->load->view('template/datamaster/head', $data);
-		$this->load->view('template/datamaster/header');
-		$this->load->view('template/datamaster/sidebar');
-		$this->load->view('/datamaster/t_mhs');
-		$this->load->view('template/datamaster/footer');
-		$this->load->view('template/datamaster/js');
+		$value['akun'] = $this->db->get_where('akun', ['username' => $this->session->userdata('username')])->row_array();
+		$value['title']="Mahasiswa KP";
+		$value['header']="Mahasiswa KP";
+		$value['value_main'] = 2;
+		$value['value_side'] = 4;
+		$this->load->view('template/header', $value);
+		$this->load->view('template/datamaster/side-bar-dmt', $value);
+		$this->load->view('datamaster/dmt-main', $value);
+		$this->load->view('template/footer', $value);
 	}
-	public function lihatmahasiswa()
+
+	// SETTINGS TA ACCOUNTS
+	public function setta_kordinator()
 	{
-		$data['tittle'] = 'Lihat Mahasiswa';
-		$this->load->view('template/datamaster/head', $data);
-		$this->load->view('template/datamaster/header');
-		$this->load->view('template/datamaster/sidebar');
-		$this->load->view('template/datamaster/breadcrumb');
-		$this->load->view('/datamaster/l_mhs');
-		$this->load->view('template/datamaster/footer');
-		$this->load->view('template/datamaster/js');
+		$value['akun'] = $this->db->get_where('akun', ['username' => $this->session->userdata('username')])->row_array();
+		$value['title']="Kordinator TA";
+		$value['header']="Kordinator TA";
+		$value['value_main'] = 3;
+		$value['value_side'] = 1;
+		$this->load->view('template/header', $value);
+		$this->load->view('template/datamaster/side-bar-dmt', $value);
+		$this->load->view('datamaster/dmt-main', $value);
+		$this->load->view('template/footer', $value);
 	}
+	public function setta_pembimbing()
+	{
+		$value['akun'] = $this->db->get_where('akun', ['username' => $this->session->userdata('username')])->row_array();
+		$value['title']="Pembimbing TA";
+		$value['header']="Dosen Pembimbing TA";
+		$value['value_main'] = 3;
+		$value['value_side'] = 2;
+		$this->load->view('template/header', $value);
+		$this->load->view('template/datamaster/side-bar-dmt', $value);
+		$this->load->view('datamaster/dmt-main', $value);
+		$this->load->view('template/footer', $value);
+	}
+	public function setta_penguji()
+	{
+		$value['akun'] = $this->db->get_where('akun', ['username' => $this->session->userdata('username')])->row_array();
+		$value['title']="Penguji TA";
+		$value['header']="Dosen Penguji TA";
+		$value['value_main'] = 3;
+		$value['value_side'] = 3;
+		$this->load->view('template/header', $value);
+		$this->load->view('template/datamaster/side-bar-dmt', $value);
+		$this->load->view('datamaster/dmt-main', $value);
+		$this->load->view('template/footer', $value);
+	}
+	public function setta_mahasiswa()
+	{
+		$value['akun'] = $this->db->get_where('akun', ['username' => $this->session->userdata('username')])->row_array();
+		$value['title']="Mahasiswa TA";
+		$value['header']="Mahasiswa TA";
+		$value['value_main'] = 3;
+		$value['value_side'] = 4;
+		$this->load->view('template/header', $value);
+		$this->load->view('template/datamaster/side-bar-dmt', $value);
+		$this->load->view('datamaster/dmt-main', $value);
+		$this->load->view('template/footer', $value);
+	}
+
 }

@@ -1,0 +1,25 @@
+.menu-open {
+	background-color: rgb(220, 229, 241);
+}
+.bg-sidebar {
+	background-color: rgb(237, 245, 245);
+}
+#formButton {
+	display: block;
+    /* margin-right: auto; */
+    margin: 20px;
+    margin-bottom: 8px;
+	
+}
+.form-add{
+
+	background: #fff;
+    display: none;
+    
+    
+}
+.in-form{
+    padding: 20px;
+    padding-bottom: 0px;
+}
+
