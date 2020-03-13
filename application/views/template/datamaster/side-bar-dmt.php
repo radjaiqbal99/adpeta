@@ -38,7 +38,7 @@
         <?php } ?>
 
         <?php if ($value_main == 1) { ?>
-          <li class="nav-item has-treeview ">
+          <li class="nav-item has-treeview mb-3">
             <a href="datamaster/dashboard" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>Dashboard</p>

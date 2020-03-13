@@ -1,0 +1,127 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #DFE6E9;
+}
+
+.jumbotron {
+
+	height: 695px;
+	margin-bottom: -100px;
+	position: relative;
+	background: url(../image/itenas-gdg.jpg) no-repeat;
+	background-size: cover;
+
+
+}
+
+.jumbotron .container {
+	z-index: 1;
+	position: relative;
+}
+
+.jumbotron::after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+    position: absolute;
+	bottom: 0;
+}
+
+.content {}
+
+
+
+.petunjuk h2 {
+	color: #ffffff;
+	text-align: center;
+}
+
+.petunjuk p {
+	color: #acacac;
+	font-size: 18px;
+	text-align: center;
+}
+
+.petunjuk button {
+	margin-left: 150px;
+	margin-bottom: 10px;
+}
+
+.box-login {
+	text-align: center;
+	background-color: #DFE6E9;
+	height: 100%;
+	padding: 40px;
+	
+	border-radius: 5px;
+
+
+}
+
+.box-login h2 {
+	font-size: 32px;
+	font-weight: 400 !important;
+	color: #1E272E;
+}
+
+.box-login input {
+	width: 100%;
+	padding: 5px;
+	text-align: center;
+	margin-top: 10px;
+	border: none;
+	border-radius: 5px;
+}
+
+.box-login .custom-checkbox {
+	text-align: left;
+	color: #1E272E;
+}
+
+.box-login button {
+	width: 100%;
+	margin-top: 10px;
+	padding: 5px;
+	border: none;
+	border-radius: 5px;
+}
+
+.box-login p {
+	margin-top: 50px;
+	font-style: italic;
+	color: #acacac;
+	font-weight: 400;
+	font-size: 12px;
+}
+
+.box-login a {
+	color: #acacac;
+	text-decoration: none;
+}
+
+.box-login a:hover {
+	color: #28a745;
+}
+
+
+/* pc version */
+@media (min-width: 992px) {
+	.content {
+	margin-bottom: 100px;
+	}
+
+	.petunjuk h2 {
+		text-align: left;
+	}
+
+	.petunjuk p {
+		text-align: left;
+		font-size: 20px;
+	}
+
+	.petunjuk button {
+		margin: 0;
+	}

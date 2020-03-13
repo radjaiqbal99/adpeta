@@ -8,7 +8,7 @@
                         <div class="small-box bg-info">
                             <div class="inner">
                                 <h3>Admin</h3>
-                                <p>Settings Account</p>
+                                <p>Management Account</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-stats-bars"></i>
