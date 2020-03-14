@@ -18,13 +18,32 @@ class Mhs extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function dashbord()
+	// DASHBOARD MAHASISWA
+	public function dasmhs()
 	{
-		$data['akun']= $this->db->get_where('akun',['username' =>$this->session->userdata('username')])->row_array();
-		$this->load->view('template/header',$data);
-		$this->load->view('template/side-bar',$data);
-		$this->load->view('mhs/mhs-dashboard',$data);
-		$this->load->view('template/footer',$data);
+		$value['akun'] = $this->db->get_where('akun', ['username' => $this->session->userdata('username')])->row_array();
+		$value['value_main'] = 0;
+		$value['value_side'] = 0;
+		$value['title']="Dashboard";
+		$value['header']="Dashboard";
+		$this->load->view('template/header',$value);
+		$this->load->view('template/mahasiswa/side-bar-mhs',$value);
+		$this->load->view('mhs/mhs-main',$value);
+		$this->load->view('template/footer',$value);
+	}
+
+	// DASHBOARD MAHASISWA KP
+	public function dasmhskp()
+	{
+		$value['akun'] = $this->db->get_where('akun', ['username' => $this->session->userdata('username')])->row_array();
+		$value['value_main'] = 1;
+		$value['value_side'] = 1;
+		$value['title']="Dashboard";
+		$value['header']="Dashboard";
+		$this->load->view('template/header',$value);
+		$this->load->view('template/mahasiswa/side-bar-mhs',$value);
+		$this->load->view('mhs/mhs-main',$value);
+		$this->load->view('template/footer',$value);
 	}
 
 	public function formulirpengajuanKP()

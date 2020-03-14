@@ -7,7 +7,37 @@
     <nav class="mt-5">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
-        <?php if ($value_main == 0) { ?>
+      <!-- <?php if ($value_main == 6) { ?>
+          <li class="nav-item has-treeview ">
+            <a href="datamaster/supadmin" class="nav-link active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="" class="nav-link  text-info">
+              <i class="nav-icon fas fa-cog"></i>
+              <p>Setting
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/layout/top-nav.html" class="nav-link">
+                  <i class="fas fa-lock nav-icon"></i>
+                  <p>Change Password</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('login/logout') ?>" class="nav-link">
+                  <i class="fas fa-sign-out-alt nav-icon"></i>
+                  <p>Logout</p>
+                </a>
+            </ul>
+          </li>
+        <?php } ?> -->
+
+        <?php if ($value_side == 0) { ?>
           <li class="nav-item has-treeview ">
             <a href="datamaster/dashboard" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -37,7 +67,7 @@
           </li>
         <?php } ?>
 
-        <?php if ($value_main == 1) { ?>
+        <?php if ($value_side == 2) { ?>
           <li class="nav-item has-treeview mb-3">
             <a href="datamaster/dashboard" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -73,7 +103,7 @@
           </li>
         <?php } ?>
 
-        <?php if ($value_main == 2) { ?>
+        <?php if ($value_side == 2) { ?>
           <li class="nav-item has-treeview mb-3">
             <a href="datamaster/dashboard" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -220,7 +250,7 @@
           </li>
         <?php } ?>
 
-        <?php if ($value_main == 3) { ?>
+        <?php if ($value_side == 2) { ?>
           <li class="nav-item has-treeview mb-3">
             <a href="datamaster/dashboard" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>

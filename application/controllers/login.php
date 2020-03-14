@@ -39,11 +39,15 @@ class Login extends CI_Controller {
 						redirect('datamaster/dashboard');
 					}
 					else if($user_akun['role-id']==2){
-						redirect('mhs/dashbord');
+						redirect('mhs/dasmhs');
 					}
 					else if($user_akun['role-id']==3){
 						redirect('dsn/dashbord');
 					}
+					else if($user_akun['role-id']==7){
+						redirect('datamaster/supadmin');
+					}
+					
 					
 				}else{
 					$this->session->set_flashdata('message','<div class="alert alert-danger" role="alert">Password salah salah</div>');
