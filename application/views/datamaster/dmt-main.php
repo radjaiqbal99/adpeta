@@ -154,10 +154,10 @@
                                 <div class="form-group">
                                     <label for="">Role</label>
                                     <select class="custom-select" id="inputGroupSelect01">
-                                        <option selected>Choose...</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>list
-                                        <option value="3">Three</option>
+                                        <option value="1">Dosen</option>
+                                        <option value="2">Kordinator KP</option>
+                                        <option value="3">Kordinator TA</option>
+                                        <option value="4">Mahasiswa</option>
                                     </select>
                                 </div>
 
@@ -181,10 +181,11 @@
                         
                         <div class=" input-group role">
                             <select class="custom-select" id="inputGroupSelect01">
-                                <option selected>All</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <option value="1">All</option>
+                                <option value="1">Dosen</option>
+                                <option value="2">Kordinator KP</option>
+                                <option value="3">Kordinator TA</option>
+                                <option value="4">Mahasiswa</option>
                             </select>
                     </div>
                     <!-- END FORM TAMBAH AKUN -->
@@ -210,8 +211,8 @@
                                                 <ion-icon name="menu-outline"></ion-icon>
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item" href="#">Edit</a>
-                                                <a class="dropdown-item" href="#">Delete</a>
+                                                <button class="dropdown-item" id="formButton_edit" href="">Edit</button>
+                                                <button class="dropdown-item">Delete</button>
                                             </div>
                                         </div>
                                     </td>
@@ -235,7 +236,7 @@
     </div>
 <?php } ?>
 
-<!-- KORDINATOR KP -->
+<!-- TUGAS AKHIR -->
 <?php if ($value_main == 2) { ?>
     <div class="content-wrapper">
         <section class="content pt-5 p-4">
@@ -244,7 +245,7 @@
                     <div class="card">
                         <!-- TABEL AKUN -->
                         <div class=" card-body table-responsive">
-                            <table id="example1" class="table table-bordered table-striped ">
+                            <table id="example1" class="table table-bordered table-striped table-sm">
                                 <thead class="bg-info">
                                     <tr>
                                         <th>NRP</th>
@@ -268,11 +269,11 @@
                                         <td>Win 95+</td>
                                         <td>Trident</td>
                                         <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
+                                        <td><button class="btn-sm btn-success">Publish</button></td>
                                     </tr>
                                 </tbody>
                                 <tfoot>
-                                    <tr>
+                                    <tr class="bg-info">
                                         <th>NRP</th>
                                         <th>Nama</th>
                                         <th>Judul</th>
@@ -294,7 +295,7 @@
     </div>
 <?php } ?>
 
-<!-- DOSEN PEMBIMBING KP -->
+<!-- KERJA PRAKTIK -->
 <?php if ($value_main == 3) { ?>
     <div class="content-wrapper">
         <section class="content pt-5 p-4">
@@ -302,14 +303,13 @@
                 <div class="col-12">
                     <div class="card">
                         <div class=" card-body table-responsive">
-                            <table id="example1" class="table table-bordered table-striped ">
+                            <table id="example1" class=" table table-bordered table-striped table-sm">
                                 <thead class="bg-info">
                                     <tr>
                                         <th>NRP</th>
                                         <th>Nama</th>
                                         <th>Judul</th>
                                         <th>Tempat</th>
-                                        
                                         <th>Pembimbing</th>
                                         <th>Penguji</th>
                                         <th>Status</th>
@@ -322,18 +322,18 @@
                                         <td>Win 95+</td>
                                         <td>Trident</td>
                                         <td>Internet Explorer 4.0</td>
-                                       
+
                                         <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
+                                        <td><button class="btn-sm btn-success">Publish</button></td>
                                     </tr>
                                 </tbody>
                                 <tfoot>
-                                    <tr>
+                                    <tr class="bg-info">
                                         <th>NRP</th>
                                         <th>Nama</th>
                                         <th>Judul</th>
                                         <th>Tempat</th>
-                                  
+
                                         <th>Pembimbing</th>
                                         <th>Penguji</th>
                                         <th>Status</th>

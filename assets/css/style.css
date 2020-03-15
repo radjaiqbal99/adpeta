@@ -26,3 +26,10 @@
     margin-left: 15pt;
     width: 20%;
 }
+.card-profile{
+    border-radius: 10px 10px 0px 0px;
+}
+
+.color-text{
+  color: aqua;   
+}

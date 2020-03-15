@@ -66,6 +66,9 @@
       $("#formButton").click(function() {
         $("#form1").toggle();
       });
+      $("#formButton_edit").click(function() {
+        $("#form1").toggle();
+      });
     });
 
     function asd(a) {

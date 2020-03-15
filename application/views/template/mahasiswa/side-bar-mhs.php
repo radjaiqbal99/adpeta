@@ -5,7 +5,7 @@
   </a>
   <div class="sidebar bg-sidebar">
     <nav class="mt-5">
-      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+      <ul class="nav nav-pills nav-sidebar flex-column " data-widget="treeview" role="menu" data-accordion="false">
 
         <!-- DASHBOARD MAHASISWA -->
         <?php if ($value_side == 0) { ?>
@@ -40,14 +40,39 @@
 
         <!-- DASHBOARD MAHASISWA KP -->
         <?php if ($value_side == 1) { ?>
-          <li class="nav-item has-treeview ">
-            <a href="mhs/dasmhs" class="nav-link active">
+          <li class="nav-item has-treeview mb-4 ">
+            <a href="mhs/dasmhs" class="nav-link text-info menu-open">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>Dashboard</p>
             </a>
           </li>
+          <li class="nav-item has-treeview ">
+            <a href="mhs/profile_mhskp" class="nav-link text-info
+            ">
+              <i class="nav-icon fas fa-address-card"></i>
+              <p class="">Profile</p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview ">
+            <a href="mhs/pengajuan_kp_mhskp" class="nav-link text-info <?= $mhskp_pengajuan_kp?>">
+              <i class="<?= $color_text_pengajuan_kp?> nav-icon fas fa-address-card"></i>
+              <p class="<?= $color_text_pengajuan_kp?>">Profile</p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview ">
+            <a href="mhs/dasmhs" class="nav-link text-info">
+              <i class="nav-icon fas fa-graduation-cap"></i>
+              <p>Pengajuan Sidang</p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview ">
+            <a href="mhs/dasmhs" class="nav-link text-info">
+              <i class="nav-icon fas fa-file-upload"></i>
+              <p>Upload Proposal</p>
+            </a>
+          </li>
           <li class="nav-item has-treeview">
-            <a href="" class="nav-link  text-info">
+            <a href="" class="nav-link text-info">
               <i class="nav-icon fas fa-cog"></i>
               <p>Setting
                 <i class="fas fa-angle-left right"></i>
