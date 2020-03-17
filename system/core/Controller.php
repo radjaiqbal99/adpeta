@@ -56,6 +56,8 @@ class CI_Controller {
 	 *
 	 * @var	object
 	 */
+	
+
 	private static $instance;
 
 	/**

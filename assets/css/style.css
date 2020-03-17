@@ -14,8 +14,13 @@
 .form-add{
 
 	background: #fff;
-    display: none;
+    display: none; 
     
+}
+.form-edit{
+
+	background: #fff;
+    display: none; 
     
 }
 .in-form{

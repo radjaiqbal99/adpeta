@@ -28,23 +28,23 @@ class Login extends CI_Controller {
 		$pass_akun = $this->db->get_where('akun',['password' => $password])->row_array();
 		
 		if($user_akun){
-			if($user_akun['is_active']==0){
+			if($user_akun['is-active']==0){
 				if($pass_akun){
 					$data =[
 						'username'=>$user_akun['username'],
-						'role_id'=>$user_akun['role-id']
+						'role_id'=>$user_akun['role_id']
 					];
 					$this->session->set_userdata($data);
-					if($user_akun['role-id']==1){
+					if($user_akun['role_id']==1){
 						redirect('datamaster/dashboard');
 					}
-					else if($user_akun['role-id']==2){
+					else if($user_akun['role_id']==2){
 						redirect('mhs/dasmhs');
 					}
-					else if($user_akun['role-id']==3){
+					else if($user_akun['role_id']==3){
 						redirect('dsn/dashbord');
 					}
-					else if($user_akun['role-id']==7){
+					else if($user_akun['role_id']==7){
 						redirect('datamaster/supadmin');
 					}
 					

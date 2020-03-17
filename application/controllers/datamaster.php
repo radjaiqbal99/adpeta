@@ -19,11 +19,26 @@ class Datamaster extends CI_Controller
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	public $ROLE = [ 
+		"1" => "Admin",
+		"2" => "Mahasiswa",
+		"3" => "Dosen",
+		"4" => "Dosen Wali",
+		"5" => "Koordinator TA",
+		"6" => "Koordinator KP",
+		"7" => "Super Admin"
+	];
 
+	function __construct(){
+		parent::__construct();		
+		$this->load->model('super/Super_admin');
+        $this->load->helper('url');
+	}
 	// SUPER ADMIN
 
 	public function supadmin()
 	{
+	
 		$value['akun'] = $this->db->get_where('akun', ['username' => $this->session->userdata('username')])->row_array();
 		$value['title']="Dashboard";
 		$value['header']="Dashboard";
@@ -33,6 +48,69 @@ class Datamaster extends CI_Controller
 		$this->load->view('template/datamaster/side-bar-dmt', $value);
 		$this->load->view('datamaster/dmt-main', $value);
 		$this->load->view('template/footer', $value);
+	}
+	
+	// tambah aksi
+	public function tambahuser_aksi()
+	{
+	
+		$identitas = $this->input->post('identitas');
+		$nama = $this->input->post('nama');
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$prodi = $this->input->post('prodi');
+		$role_id = $this->input->post('role');
+ 
+		$data = array(
+			'nid' => $identitas,
+			'nama' => $nama,
+			'username' => $username,
+			'password' => $password,
+			'prodi' => $prodi,
+			'role_id' => $role_id
+			);
+		$this->Super_admin->input_data($data,'akun');
+		$message = "waw";
+		echo "<script type='text/javascript'>alert('Hello! I am an alert box!');</script>";
+		redirect('datamaster/supadmin');
+	}
+
+	public function edit_data()
+	{
+		
+		$id = $this->input->post('id');
+		$nid = $this->input->post('nid');
+		$nama = $this->input->post('nama');
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$prodi = $this->input->post('prodi');
+		$role = $this->input->post('role');
+ 
+		$data = array(
+			'nid' => $nid,
+			'nama' => $nama,
+			'username' => $username,
+			'password' => $password,
+			'prodi' => $prodi,
+			'role_id' => $role
+			// 'role_id' => $role_id
+			);
+		$where = array(
+		'id' => $id
+		);
+		$this->Super_admin->edit_data($where,'akun',$data);
+		$message = "Data Berhasil Diubah!";
+		echo "$message";
+		
+	}
+
+	function hapus_user(){
+		$id = $this->input->post('id');
+		$where = array('id' => $id);
+		$this->Super_admin->hapus_data($where,'akun');
+		// redirect('datamaster/supadmin');
+		$message = "Data Berhasil Dihapus!";
+		echo "$message";
 	}
 
 

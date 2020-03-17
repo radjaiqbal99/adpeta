@@ -64,11 +64,66 @@
     });
     $(document).ready(function() {
       $("#formButton").click(function() {
-        $("#form1").toggle();
+        $("#form1").slideToggle();
       });
-      $("#formButton_edit").click(function() {
-        $("#form1").toggle();
+      $(".formEdit").click(function() {
+        var idNya =$(this).attr("idNya")
+        var nid =$(this).attr("nid")
+        var nama =$(this).attr("nama")
+        var username =$(this).attr("username")
+        var password =$(this).attr("password")
+        var prodi =$(this).attr("prodi")
+        var role =$(this).attr("role")
+        
+        $("#idNya").val(idNya)
+        $("#nid").val(nid)
+        $("#nama").val(nama)
+        $("#username").val(username)
+        $("#password").val(password)
+        $("#prodi").val(prodi)
+        $("#role").val(role)
+        $("#form2").slideToggle();
+        
+
+      
       });
+
+      $("#submit-edit").click(function(e){
+        e.preventDefault();
+          $.ajax({
+              url : "<?php echo base_url(). 'datamaster/edit_data'; ?>",
+              type : "POST",
+              data : $("#form2").serialize(),
+              dataType : "JSON",
+               statusCode: {
+                  200: function(response) {
+                    alert( response.responseText );
+                    window.location = window.location.href
+                  }
+                }
+          })
+
+      })
+
+
+      $(".hapus_user").click(function(e){
+        e.preventDefault();
+          var idHapus =$(this).attr("idHapus")
+          $.ajax({
+              url : "<?php echo base_url(). 'datamaster/hapus_user'; ?>",
+              type : "POST",
+              data : { id : idHapus },
+              dataType : "JSON",
+               statusCode: {
+                  200: function(response) {
+                    alert( response.responseText );
+                    window.location = window.location.href
+                  }
+                }
+          })
+
+        
+      })
     });
 
     function asd(a) {
